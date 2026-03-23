@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: spotify-telegram-bot
+    runtime: node
+    buildCommand: npm install
+    startCommand: node index.js
+    plan: free
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: SPOTIFY_CLIENT_ID
+        sync: false
+      - key: SPOTIFY_CLIENT_SECRET
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: 3000
